@@ -50,4 +50,4 @@ Bind all of the CSV data to your circles. This will let you easily determine the
 2. Incorporate d3-tip
 While the ticks on the axes allow us to infer approximate values for each circle, it's impossible to determine the true value without adding another layer of data. Enter tooltips: developers can implement these in their D3 graphics to reveal a specific element's data when the user hovers their cursor over the element. Add tooltips to your circles and display each tooltip with the data that the user has selected. Use the d3-tip.js plugin developed by Justin Palmer—we've already included this plugin in your assignment directory.
 
-![](8-tooltip.gif)
+![](images/8-tooltip.gif)
