@@ -1,5 +1,4 @@
 // Create initial variables
-
 var svgWidth = 960;
 var svgHeight = 500;
 
@@ -286,23 +285,21 @@ d3.csv("data/data.csv").then(function(data, err) {
     // x axis labels event listener
     xlabelsGroup.selectAll("text")
       .on("click", function() {
+
         // get value of selection
         var value = d3.select(this).attr("value");
         if (value !== chosenXAxis) {
   
-          // replaces chosenXAxis with value
+          // replaces chosen x-axis with value
           chosenXAxis = value;
   
-          // console.log(chosenXAxis)
-  
-          // functions here found above csv import
-          // updates x scale for new data
+          // updates x-scale for new data
           xLinearScale = xScale(data, chosenXAxis);
   
-          // updates x axis with transition
+          // updates x-axis with transition
           xAxis = renderXAxes(xLinearScale, xAxis);
   
-          // updates circles with new x values
+          // updates circles with new x-values
           circles = renderXCircles(circles, xLinearScale, chosenXAxis);
 
         //   updating text within circles
@@ -348,32 +345,29 @@ d3.csv("data/data.csv").then(function(data, err) {
         }
       });
 
-      // y axis labels event listener
+      // y-axis labels event listener
     ylabelsGroup.selectAll("text")
     .on("click", function() {
       // get value of selection
       var value = d3.select(this).attr("value");
       if (value !== chosenYAxis) {
 
-        // replaces chosenYAxis with value
+        // replaces chosen y-axis with value
         chosenYAxis = value;
 
-        // console.log(chosenYAxis)
-
-        // functions here found above csv import
-        // updates y scale for new data
+        // updates y-scale for new data
         yLinearScale = yScale(data, chosenYAxis);
 
-        // updates x axis with transition
+        // updates x-axis with transition
         yAxis = renderYAxes(yLinearScale, yAxis);
 
-        // updates circles with new y values
+        // updates circles with new y-values
         circles = renderYCircles(circles, yLinearScale, chosenYAxis);
 
         // update text within circles
         circlesText = renderYText(circlesText, yLinearScale, chosenYAxis) 
 
-        // updates tooltips with new info
+        // updates toolTips with new info
         circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circlesGroup);
 
         // changes classes to change bold text
